@@ -1,0 +1,83 @@
+.latest-products-container {
+    display: flex;
+    flex-wrap: nowrap;  /* จัดเรียงในแนวนอน */
+    gap: 16px;
+    overflow-x: auto;
+    padding: 16px 0;
+  }
+  
+  .latest-products-container::-webkit-scrollbar {
+    display: none;  /* ซ่อน Scrollbar */
+  }
+  
+  .product-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 250px; /* กำหนดขนาดคงที่ */
+    min-height: 420px; /* ป้องกันความสูงไม่เท่ากัน */
+    padding: 16px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    flex-grow: 1;
+  }
+  
+  .product-card img {
+    max-width: 100%;
+    max-height: 150px;
+    object-fit: cover;
+  }
+  
+  .product-card .product-info {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+  }
+  
+  .product-card .product-title {
+    font-size: 16px;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 90%;
+  }
+  
+  .product-card .product-price {
+    font-size: 18px;
+    font-weight: bold;
+    color: green;
+  }
+  
+  .product-card .compare-button {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    border-radius: 5px;
+    background: white;
+    cursor: pointer;
+  }
+  
+  /* ✅ Media Queries สำหรับ iPad และ Mobile */
+  @media (max-width: 1024px) { /* iPad ทุกขนาด */
+    .product-card {
+      width: 220px; /* ลดขนาดการ์ด */
+      min-height: 400px; /* ให้สูงเท่ากัน */
+    }
+  }
+  
+  @media (max-width: 768px) { /* Mobile */
+    .product-card {
+      width: 200px; /* ปรับขนาดให้เล็กลง */
+      min-height: 380px;
+    }
+  }
+  
