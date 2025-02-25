@@ -191,6 +191,7 @@ sudo ls -la /etc/nginx/ssl/
 
 # 4. ตรวจสอบไฟล์ภายในโฟลเดอร์ certificate
 sudo ls -la '/etc/nginx/ssl/[ชื่อโฟลเดอร์ที่พบในขั้นตอนที่ 3]/'
+sudo ls -la '/etc/nginx/ssl/*.intern-smartcatalog-api.i3body.cloud_intern-smartcatalog-api.i3body.cloud_2048/'
 # จะเห็นไฟล์ fullchain.cer และ private.key
 
 # 5. สร้างโฟลเดอร์สำหรับเก็บ symbolic link
@@ -198,7 +199,10 @@ sudo mkdir -p /etc/nginx/ssl/smartcatalog
 
 # 6. สร้าง symbolic link ด้วยเส้นทางที่ถูกต้อง (แทนที่ด้วยชื่อโฟลเดอร์จริง)
 sudo ln -sf '/etc/nginx/ssl/[ชื่อโฟลเดอร์ที่พบในขั้นตอนที่ 3]/fullchain.cer' /etc/nginx/ssl/smartcatalog/fullchain.pem
+sudo ln -sf '/etc/nginx/ssl/*.intern-smartcatalog-api.i3body.cloud_intern-smartcatalog-api.i3body.cloud_2048/fullchain.cer' /etc/nginx/ssl/smartcatalog/fullchain.pem
+
 sudo ln -sf '/etc/nginx/ssl/[ชื่อโฟลเดอร์ที่พบในขั้นตอนที่ 3]/private.key' /etc/nginx/ssl/smartcatalog/privkey.pem
+sudo ln -sf '/etc/nginx/ssl/*.intern-smartcatalog-api.i3body.cloud_intern-smartcatalog-api.i3body.cloud_2048/private.key' /etc/nginx/ssl/smartcatalog/privkey.pem
 
 # 7. ตรวจสอบว่า symbolic link ถูกสร้างขึ้นอย่างถูกต้อง
 ls -la /etc/nginx/ssl/smartcatalog/
